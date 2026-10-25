@@ -1,0 +1,85 @@
+import websocket
+import json
+import time
+
+URL = "wss://fstream.binance.com/ws"
+
+def on_open(ws):
+
+    print("========================================")
+    print("WEBSOCKET BAĞLANDI")
+    print("========================================")
+
+    request = {
+        "method": "SUBSCRIBE",
+        "params": [
+            "btcusdt@kline_1m",
+            "ethusdt@kline_1m",
+            "solusdt@kline_1m"
+        ],
+        "id": 1
+    }
+
+    print("SUBSCRIBE gönderiliyor:")
+    print(json.dumps(request))
+
+    ws.send(json.dumps(request))
+
+
+def on_message(ws, message):
+
+    print()
+    print("MESAJ GELDİ:")
+
+    try:
+
+        data = json.loads(message)
+
+        print(
+            json.dumps(
+                data,
+                indent=2
+            )[:2000]
+        )
+
+    except Exception:
+
+        print(message)
+
+
+def on_error(ws, error):
+
+    print()
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("WEBSOCKET HATASI")
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print(error)
+
+
+def on_close(ws, code, msg):
+
+    print()
+    print("WEBSOCKET KAPANDI")
+    print("CODE:", code)
+    print("MESSAGE:", msg)
+
+
+print()
+print("Binance Futures WebSocket test başlıyor...")
+print()
+print("URL:")
+print(URL)
+print()
+
+ws = websocket.WebSocketApp(
+    URL,
+    on_open=on_open,
+    on_message=on_message,
+    on_error=on_error,
+    on_close=on_close
+)
+
+ws.run_forever(
+    ping_interval=20,
+    ping_timeout=10
+)

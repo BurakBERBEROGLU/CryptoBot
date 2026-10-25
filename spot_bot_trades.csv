@@ -1,0 +1,1 @@
+time,trade_id,symbol,side,entry_price,exit_price,stop_price,tp_price,quantity,position_value,gross_pnl,entry_fee,exit_fee,net_pnl,close_reason,hold_seconds,risk_usd,rsi,ema_gap_pct

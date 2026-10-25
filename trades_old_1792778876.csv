@@ -1,0 +1,2 @@
+closed_at_utc,opened_at_utc,symbol,side,source,signal_mode,reason,entry,exit,size,gross_pnl,open_fee,close_fee,funding,net_pnl,hold_min,change_24h_at_entry,change_1h_at_entry,max_fav_usd,max_adv_usd
+2026-10-22T21:51:39+00:00,2026-10-22T21:31:38+00:00,BTR/USDT,SHORT,AUTO,FADE,SL,0.06196887,0.06326425,1613.71342957,-2.0904,0.0400,0.0408,0.0000,-2.1712,20.0,38.56,-1.14,0.0000,-2.0190

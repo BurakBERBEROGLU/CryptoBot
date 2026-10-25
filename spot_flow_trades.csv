@@ -1,0 +1,1 @@
+time,trade_id,symbol,side,entry_price,exit_price,stop_price,tp_price,quantity,position_value,gross_pnl,entry_fee,exit_fee,net_pnl,close_reason,hold_seconds,risk_usd,rsi_1h,rsi_4h,ema_gap_pct,buy_flow_1h,buy_flow_4h,cmf_1h,volume_profile_poc
